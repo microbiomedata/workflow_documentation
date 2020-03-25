@@ -7,4 +7,4 @@ To compile a PDF run this command in Terminal:
 
 make latexpdf
 
-The result pdf will be in the _build directory.
+The result pdf will be in the _build/latex directory.
