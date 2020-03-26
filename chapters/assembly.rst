@@ -5,6 +5,22 @@ Summary
 -------
 This workflow is developed by Brian Foster at JGI and original from his repo. It take paired-end reads runs reads quailty trimming, artifact removal, linker-trimming, adapter trimming, and spike-in/host removal by rqcfilter (BBTools:38.44), then error corrected by bbcms (BBTools). The clean reads are assembled by MetaSpades. After assembly, the reads are mapped back to contigs by bbmap (BBTools) for coverage information.
 
+Point of contact
+-----------------
+Original author of the workflow with e-mail:
+
+Package maintainer of the workflow with e-mail:
+
+Details
+---------------------
+
+Inputs
+~~~~~~~~
+
+Outputs
+~~~~~~~~
+
+
 Workflow Diagram
 ------------------
 
@@ -22,6 +38,7 @@ Workflow Dependencies
 ---------------------
 Third party software
 ~~~~~~~~~~~~~~~~~~~~
+List all third party software used and the license information.
 
 - conda v4.7.10 (BSD 3-Clause)
 - MetaSPades v3.13.0 (GPLv2)
@@ -44,15 +61,12 @@ Test datasets
 - Mock dataset: SRR7877884
 - simulated dataset
 
+Benchmarks
+--------
+A figure showing memory, cpu, and time conconumption with samples of various complexity and size are needed.
 
-Details
----------------------
+Any method to estimate the memory and computing time?
 
-Inputs
-~~~~~~~~
-
-Outputs
-~~~~~~~~
 
 
 
@@ -77,4 +91,7 @@ bryce911/bbtools:38.44
 bryce911/spades:3.13.0
 
 Input files
+
+Version Hisotry
+----------------
 
