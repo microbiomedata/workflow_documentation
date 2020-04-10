@@ -1,4 +1,4 @@
-# doc_template
+# Readme
 A template for workflow documentations
 
 This documentation is written in reStructuredText with Sphinx. Please use a text editor to edit the content.
