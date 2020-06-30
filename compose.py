@@ -117,16 +117,16 @@ class NMDC_Composer:
                         for i, l in enumerate(contents):
                             if ".. image:: " in l:
                                 src_img_f = l.split("image:: ")[1].strip()
-                                print(os.path.join(src_dir, src_img_f))
                                 tgt_img_f = "_".join([workflow, src_img_f])
                                 tgt_img_ref = os.path.join("../_static/images/", tgt_img_f)
                                 tgt_img_f = os.path.join(self.DOC_IMG_DIR, tgt_img_f)
                                 contents[i] = ".. image:: {}\n".format(tgt_img_ref)
                                 copy2(os.path.join(src_dir, src_img_f), tgt_img_f)
-                                print(contents[i])
                         with open(tgt, 'w') as fh:
                             fh.writelines(contents)
         self.write_index_rst(chapters)
+        print("Run this command to generate docs/_build/latex/NMDCWorkflows.pdf: cd docs&&make latexpdf")
+
 
 
     def write_index_rst(self, chapters):
