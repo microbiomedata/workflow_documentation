@@ -5,4 +5,5 @@ workflows:
     '2_MAG': 'https://github.com/microbiomedata/metaMAGs.git'
     '3_MetaGAssemly': 'https://github.com/microbiomedata/metaAssembly.git'
     '4_MetaGAnnotation': 'https://github.com/microbiomedata/mg_annotation.git'
+    '5_Metaproteomics': 'https://github.com/microbiomedata/metaPro'
 
