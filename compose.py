@@ -125,7 +125,7 @@ class NMDC_Composer:
                         with open(tgt, 'w') as fh:
                             fh.writelines(contents)
         self.write_index_rst(chapters)
-        print("Run this command to generate docs/_build/latex/NMDCWorkflows.pdf: cd docs&&make latexpdf")
+        print("Run this command to generate docs/_build/latex/NMDCWorkflows.pdf:\n\tcd docs&&make latexpdf")
 
 
 
