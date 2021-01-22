@@ -8,4 +8,3 @@ workflows:
     '5_ReadAnalysis': 'https://github.com/microbiomedata/ReadbasedAnalysis'
     '6_Metaproteomics': 'https://github.com/microbiomedata/metaPro'
     '7_Metabolomics': 'https://github.com/microbiomedata/metaMS'
-    '8_Description_MIxS_packages_v5': 'https://github.com/microbiomedata/metadata_documentation'
