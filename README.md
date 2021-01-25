@@ -1,6 +1,6 @@
 # NMDC Workflow Documentation
 
-Last update: 7/08/2020.    
+Last update: 1/25/2020.    
 
 This is the documenation for the NMDC workflows. The latest version of this documenation can be found from [here.](
 https://github.com/microbiomedata/workflow_documentation)
