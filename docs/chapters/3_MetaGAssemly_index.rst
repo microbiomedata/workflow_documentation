@@ -58,9 +58,9 @@ Inputs
 .. code-block:: JSON
 
 	{
-	  "jgi_meta.input_file":["/path/to/SRR7877884.fastq.gz"],
-	  "jgi_meta.rename_contig_prefix":"SRR7877884",
-	  "jgi_meta.outdir":"/path/to/SRR7877884_assembly"
+	  "jgi_metaASM.input_file":["/path/to/SRR7877884.fastq.gz"],
+	  "jgi_metaASM.rename_contig_prefix":"SRR7877884",
+	  "jgi_metaASM.outdir":"/path/to/SRR7877884_assembly"
 	}
 
 * The json file includes three parts: 
@@ -70,6 +70,10 @@ Inputs
     2. contig prefix for fasta header
     
     3. output path
+
+    4. memory (optional) ex: "jgi_metaASM.memory": "105G"
+
+    5. threads (optional) ex: "jgi_metaASM.threads": "16"
     
 .. note::
     
@@ -98,11 +102,11 @@ Below is a part list of all output files::
 	│   └── unique31mer.txt
 	├── final_assembly
 	│   ├── assembly.agp
-	│   ├── assembly.contigs.fasta
-	│   ├── assembly.scaffolds.fasta
-	│   └── assembly.scaffolds.legend
+	│   ├── assembly_contigs.fasta
+	│   ├── assembly_scaffolds.fasta
+	│   └── assembly_scaffolds.legend
 	├── mapping
-	│   ├── covstats.txt
+	│   ├── covstats.txt (mapping_stats.txt)
 	│   ├── pairedMapped.bam
 	│   ├── pairedMapped.sam.gz
 	│   ├── pairedMapped_sorted.bam
@@ -131,17 +135,10 @@ Requirements for Execution
    
    kmercountmulti.sh -k=31 in=your.read.fq.gz
 
-Running Workflow in Cromwell on Cori
+Running Workflow in Cromwell in Cori
 ------------------------------------
-We provide three ways to run the workflow.
 
-1. CromwellJtmShifter/: The Cromwell run in head node send tasks to jtm-task-managers which will manages the tasks running on a computer node and using Shifter to run applications.
-
-2. SlurmCromwellShifter/: The submit script will request a node and launch the Cromwell. The Cromwell manages the workflow by using Shifter to run applications.
-
-3. CromwellSlurmShifter/: The Cromwell run in head node and manages the workflow by submitting each step of workflow to compute node where applications were ran by Shifter.
-
-Description of the files in each sub-directory:
+Description of the files:
 
 - .wdl file: the WDL file for workflow definition
 - .json file: the example input for the workflow

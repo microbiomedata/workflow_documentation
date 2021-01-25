@@ -6,5 +6,6 @@ workflows:
     '3_MetaGAssemly': 'https://github.com/microbiomedata/metaAssembly.git'
     '4_MetaGAnnotation': 'https://github.com/microbiomedata/mg_annotation.git'
     '5_ReadAnalysis': 'https://github.com/microbiomedata/ReadbasedAnalysis'
-    '6_Metaproteomics': 'https://github.com/microbiomedata/metaPro'
-    '7_Metabolomics': 'https://github.com/microbiomedata/metaMS'
+    '6_MetaT': 'https://github.com/microbiomedata/metaT.git'
+    '7_Metaproteomics': 'https://github.com/microbiomedata/metaPro'
+    '8_Metabolomics': 'https://github.com/microbiomedata/metaMS'

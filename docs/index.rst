@@ -12,5 +12,6 @@ Welcome to NMDC Workflows's documentation!
    chapters/3_MetaGAssemly_index.rst
    chapters/4_MetaGAnnotation_index.rst
    chapters/5_ReadAnalysis_index.rst
-   chapters/6_Metaproteomics_index.rst
-   chapters/7_Metabolomics_index.rst
+   chapters/6_MetaT_index.rst
+   chapters/7_Metaproteomics_index.rst
+   chapters/8_Metabolomics_index.rst

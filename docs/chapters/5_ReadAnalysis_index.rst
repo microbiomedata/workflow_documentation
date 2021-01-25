@@ -45,18 +45,13 @@ https://hub.docker.com/r/microbiomedata/nmdc_taxa_profilers
 Running Workflow in Cromwell
 ----------------------------
 
-There is two workflow directories that contain different configurations for Cromwell:
-
-- `CromwellJtmShifter/`: uses JTM backend.
-- `SlurmCromwellShifter/`: uses local backend.
-
-Description of the files in each sud-directory:
+Description of the files:
 
 - `.wdl`: the WDL file for read-based analysis pipeline.
 - `.wdl`: the WDL file for tasks of each tool.
 - `.json`: the example inputs.json file for the pipeline.
 - `.conf`: the conf file for running cromwell.
-- `.sh`: the script for running with jobs using JTM or sbatch to slurm.
+- `.job`: example sbatch file.
 
 Test datasets
 -------------
@@ -66,7 +61,7 @@ Zymobiomics mock-community DNA control `(SRR7877884) <https://www.ebi.ac.uk/ena/
 Inputs
 ~~~~~~
 
-* The input is a json file, 
+The input is a json file:
     
 - `ReadbasedAnalysis.enabled_tools`: set the value of the tool as `true` to enable different profiling tools
 - `ReadbasedAnalysis.db`: specify the path of the database
@@ -109,22 +104,17 @@ The workflow creates individual output directories for each tool, including clas
     |   |-- SRR7877884.classification.csv
     |   |-- SRR7877884.kreport.csv
     |   |-- SRR7877884.krona.html
-    |   `-- SRR7877884.report.csv
+    |   `-- SRR7877884.tsv
     |-- gottcha2
     |   |-- SRR7877884.full.tsv
-    |   |-- SRR7877884.gottcha_species.log
-    |   |-- SRR7877884.gottcha_species.sam
     |   |-- SRR7877884.krona.html
-    |   |-- SRR7877884.lineage.tsv
-    |   |-- SRR7877884.out.list
-    |   |-- SRR7877884.out.tab_tree
     |   |-- SRR7877884.summary.tsv
     |   `-- SRR7877884.tsv
     `-- kraken2
         |-- SRR7877884.classification.csv
         |-- SRR7877884.krona.html
-        |-- ...
-        `-- SRR7877884.report.csv
+        |-- SRR7877884.report.csv
+        `-- SRR7877884.tsv
 
 
 Requirements for Execution
@@ -132,23 +122,8 @@ Requirements for Execution
 
 - Docker or other Container Runtime
 - Cromwell or other WDL-capable Workflow Execution Tool
-- > 40 GB RAM
+- 60 GB RAM
 
-Running Workflow in Cromwell on Cori
-------------------------------------
-
-We provide two ways to run the workflow.  
-
-- `CromwellJtmShifter/`: The Cromwell run in head node and manages the workflow to submit tasks through JTM.
-- `SlurmCromwellShifter/`: The submit script will request a node and launch the Cromwell.  The Cromwell manages the workflow by using Shifter to run applications. 
-
-Description of the files in each sud-directory in `GitHub Repo <https://github.com/microbiomedata/ReadsQC>`_:
-
-- `.wdl` file: the WDL file for workflow definition
-- `.json` file: the example input for the workflow
-- `.conf` file: the conf file for running Cromwell.
-- `.sh` file: the shell script for running the example workflow
- 
 Version History
 ---------------
 
@@ -158,4 +133,3 @@ Point of contact
 ----------------
 
 Package maintainer: Po-E Li <po-e@lanl.gov>
-

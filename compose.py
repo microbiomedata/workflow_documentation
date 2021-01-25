@@ -3,9 +3,9 @@ Compose documentation for NMDC workflows
 """
 import os
 import sys
-from shutil import copy2
+import git
 
-from git import Repo
+from shutil import copy2
 from git.exc import GitCommandError
 
 import yaml
@@ -42,12 +42,13 @@ class NMDC_Composer:
         remote_repo = self.DOCUMENTATION_TEMPLATE_REPO
         local_repo = self.DOC_DIR
         try:
-            Repo.clone_from(remote_repo, local_repo)
+            git.Repo.clone_from(remote_repo, local_repo)
         except GitCommandError as error:
-            if error.status == 128:     # git destination path exist error
-                msg = "Using existing template."
-                print(msg)
-                # FIXME do a git checkout instead to update it
+            if error.status == 128:     # Do git pull from origin/master if local repo exists
+                print(f'Git pull from remote origin/master: {remote_repo}')
+                g = git.Git(local_repo)
+                g.pull('origin', 'master')
+
             else:
                 msg = "Error in fectching documentation template repository.\n"
                 msg += " ".join(error.command)
@@ -65,12 +66,17 @@ class NMDC_Composer:
         remote_repo = self.WORKFLOWS[workflow]
         local_repo = self.get_workflow_dir(workflow)
         try:
-            Repo.clone_from(remote_repo, local_repo)
+            git.Repo.clone_from(remote_repo, local_repo)
         except GitCommandError as error:
-            if error.status == 128:     # git destination path exist error
-                msg = 'Using existing module {}.'.format(workflow)
-                print(msg)
-                # FIXME do a git checkout instead to update it
+            if error.status == 128:
+                repo = git.Repo(local_repo)
+                branch = 'master'  # Pull from master first
+                try:
+                    repo.git.checkout(branch)
+                except GitCommandError:
+                    branch = 'main'  # Pull from main when no master branch
+                    repo.git.checkout(branch)
+                
             else:
                 msg = ' '.join(error.command)
                 msg += error.stderr

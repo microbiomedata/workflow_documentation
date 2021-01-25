@@ -35,10 +35,10 @@ Database
 - `CheckM <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4484387/>`_ database is a 275MB file contains the databases used for the Metagenome Binned contig quality assessment. (requires 40GB+ of memory)
 
 .. code-block:: bash
-
+	
+	mkdir checkM_DB
 	wget https://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz
-	tar -xvzf checkm_data_2015_01_16.tar.gz
-	mv checkm_data checkM_DB
+	tar -xvzf checkm_data_2015_01_16.tar.gz -C checkM_DB
 	rm checkm_data_2015_01_16.tar.gz
 
 - `GTDB-Tk <https://doi.org/10.1093/bioinformatics/btz848>`_ requires ~27G of external data that need to be downloaded and unarchived.
@@ -47,7 +47,7 @@ Database
 
 	wget https://data.ace.uq.edu.au/public/gtdb/data/releases/release89/89.0/gtdbtk_r89_data.tar.gz
 	tar -xvzf gtdbtk_r89_data.tar.gz
-	mv gtdbtk_r89_data GTDBTK_DB
+	mv release89 GTDBTK_DB
 	rm gtdbtk_r89_data.tar.gz
 
 Workflow Availability
@@ -79,8 +79,9 @@ A json files with following entries:
 3. Project name
 4. Metagenome Assembled Contig fasta file
 5. Sam/Bam file from reads mapping back to contigs.
-6. Text file which containing mapping of headers between SAM and FNA (ID in SAM/FNA<tab>ID in GFF)
-7. The database directory path which includes `checkM_DB` and `GTDBTK_DB` subdirectories. 
+6. Contigs functional annotation result in gff format"
+7. Text file which containing mapping of headers between SAM and FNA (ID in SAM/FNA<tab>ID in GFF)
+8. The database directory path which includes `checkM_DB` and `GTDBTK_DB` subdirectories. 
 
 .. code-block:: JSON
 
@@ -92,7 +93,7 @@ A json files with following entries:
 	  "nmdc_mags.sam_file":"/path/to/3300037552.bam.sorted.bam",
 	  "nmdc_mags.gff_file":"/path/to/3300037552.a.gff",
 	  "nmdc_mags.map_file":"/path/to/3300037552.a.map.txt",
-	  "nmdc_mags.database":"/path/to/database"
+	  "nmdc_mags.database":"/path/to/refdata"
 	}
 
 Outputs
@@ -102,6 +103,7 @@ The output will have a bunch of output directories, files, including statistical
 
 The final `MiMAG <https://www.nature.com/articles/nbt.3893#Tab1>`_ output is in `hqmq-metabat-bins` directory and its corresponding lineage result in `gtdbtk_output` directory.::
 
+	|-- MAGs_stats.json
 	|-- 3300037552.bam.sorted
 	|-- 3300037552.depth
 	|-- 3300037552.depth.mapped
@@ -144,20 +146,15 @@ Requirements for Execution
 - `Cromwell <https://github.com/broadinstitute/cromwell>`_ or other WDL-capable Workflow Execution Tool
 - ~120GB memory for GTDB-tk.
 
-Running Workflow in Cromwell on Cori
+Running Workflow in Cromwell in Cori
 ------------------------------------
-We provide two ways to run the workflow.  
 
-1. `SlurmCromwellShifter/`: The submit script will request a node and launch the Cromwell.  The Cromwell manages the workflow by using Shifter to run applications. 
-
-2. `CromwellSlurmShifter/`: The Cromwell run in head node and manages the workflow by submitting each step of workflow to compute node where applications were ran by Shifter.
-
-Description of the files in each sud-directory:
+Description of the files
 
  - `.wdl` file: the WDL file for workflow definition
  - `.json` file: the example input for the workflow
  - `.conf` file: the conf file for running Cromwell.
- - `.sh` file: the shell script for running the example workflow
+ - `.sh` file: the shell script for running the example workflow (sbatch)
 
 Version History
 ---------------

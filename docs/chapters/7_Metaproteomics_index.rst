@@ -8,7 +8,7 @@ The metaproteomics workflow/pipeline is an end-to-end data processing workflow f
 Workflow Diagram
 ------------------
 
-.. image:: ../_static/images/6_Metaproteomics_workflow_diagram.png
+.. image:: ../_static/images/7_Metaproteomics_workflow_diagram.png
 
 Workflow Dependencies
 ---------------------
