@@ -1,5 +1,5 @@
 
-Welcome to the NMDC's Workflow documentation!
+Welcome to NMDC Workflows's documentation!
 ==========================================
 
 .. toctree::
