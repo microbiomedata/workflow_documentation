@@ -11,11 +11,6 @@ Participants (4 NLs)
 NMDC Workflows
 --------------
 
-The NMDC workflows are also available as a web application. NMDC EDGE takes an updated EDGE Bioinformatics framework and has only the NMDC workflows integrated in order to make these workflows accessible in a user-friendly interface. (A brief introduction to EDGE Bioinformatics is found in the EDGE ABCs.) NMDC EDGE is provided as a webservice especially for users who are not comfortable with running command line tools or without the computational resources to run the command line versions.
- 
-
-The NMDC EDGE web application is available at: https://nmdc.edge-bioinformatics-test.org
-
 
 Execution Evironment
 --------------------
@@ -24,11 +19,19 @@ Two common ways to install and run the NMDC workflows:
 - Native installation
 - Containers
 
+  
+
 TODO: The following ways to run the workflows have to be separate out from public release of the documentation.
 
 - Cori/NERSC
 - LANL enviroment
 - KBase (TODO: ?)
+
+The NMDC workflows are also available as a web application. NMDC EDGE takes an updated EDGE Bioinformatics framework and has only the NMDC workflows integrated in order to make these workflows accessible in a user-friendly interface. (A brief introduction to EDGE Bioinformatics is found in the EDGE ABCs.) NMDC EDGE is provided as a webservice especially for users who are not comfortable with running command line tools or without the computational resources to run the command line versions.
+ 
+
+The NMDC EDGE web application is available at: https://nmdc.edge-bioinformatics-test.org
+
 
 
 General Guidelines
