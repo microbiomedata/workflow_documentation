@@ -15,6 +15,10 @@ Four national laboratories are working together to produce the NMDC:
 
 NMDC Workflows
 --------------
+
+General Guidelines
+--------------------
+
 NMDC aims to integrate existing open-source bioinformatics tools into standardized workflows for processing raw multi-omics data to produce interoperable and reusable annotated data products. Any commercial software are optional alternatives and not required.
 
 Execution Evironment
