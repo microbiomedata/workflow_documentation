@@ -41,7 +41,7 @@ Database
 	tar -xvzf checkm_data_2015_01_16.tar.gz -C checkM_DB
 	rm checkm_data_2015_01_16.tar.gz
 
-- `GTDB-Tk <https://doi.org/10.1093/bioinformatics/btz848>`_ requires ~27G of external data that need to be downloaded and unarchived.
+- `GTDB-Tk <https://doi.org/10.1093/bioinformatics/btz848>`_ requires ~27G of external data that need to be downloaded and unarchived. (requires ~100GB of memory)
 
 .. code-block:: bash
 
@@ -49,6 +49,9 @@ Database
 	tar -xvzf gtdbtk_r89_data.tar.gz
 	mv release89 GTDBTK_DB
 	rm gtdbtk_r89_data.tar.gz
+
+.. note:: 
+        The two databases need to be stored in the same directory path and named each subdirectory as checkM_DB and GTDBTK_DB.
 
 Workflow Availability
 ---------------------
@@ -75,26 +78,29 @@ Inputs
 A json files with following entries:
 
 1. Number of CPUs, 
-2. Output directory
-3. Project name
-4. Metagenome Assembled Contig fasta file
-5. Sam/Bam file from reads mapping back to contigs.
-6. Contigs functional annotation result in gff format"
-7. Text file which containing mapping of headers between SAM and FNA (ID in SAM/FNA<tab>ID in GFF)
-8. The database directory path which includes `checkM_DB` and `GTDBTK_DB` subdirectories. 
+2. The number of threads used by pplacer (Use lower number to reduce the memory usage)
+3. Output directory
+4. Project name
+5. Metagenome Assembled Contig fasta file
+6. Sam/Bam file from reads mapping back to contigs.
+7. Contigs functional annotation result in gff format"
+8. Text file which containing mapping of headers between SAM and FNA (ID in SAM/FNA<tab>ID in GFF)
+9. The database directory path which includes `checkM_DB` and `GTDBTK_DB` subdirectories. 
 
 .. code-block:: JSON
 
-	{
-	  "nmdc_mags.cpu":32,
-	  "nmdc_mags.outdir":"/path/to/output",
-	  "nmdc_mags.proj_name":"3300037552",
-	  "nmdc_mags.contig_file":"/path/to/3300037552.a.fna",
-	  "nmdc_mags.sam_file":"/path/to/3300037552.bam.sorted.bam",
-	  "nmdc_mags.gff_file":"/path/to/3300037552.a.gff",
-	  "nmdc_mags.map_file":"/path/to/3300037552.a.map.txt",
-	  "nmdc_mags.database":"/path/to/refdata"
-	}
+        {
+          "nmdc_mags.cpu":32,
+          "nmdc_mags.pplacer_cpu":1,
+          "nmdc_mags.outdir":"/path/to/MAGs_output",
+          "nmdc_mags.proj_name":"1781_86089",
+          "nmdc_mags.contig_file":"/path/to/Ga0482263_contigs.fna",
+          "nmdc_mags.sam_file":"/path/to/pairedMapped_sorted.bam",
+          "nmdc_mags.gff_file":"/path/to/Ga0482263_functional_annotation.gff",
+          "nmdc_mags.database":"/path/to/refdata",
+          "nmdc_mags.map_file":"/path/to/Ga0482263_contig_names_mapping.tsv"
+        }
+
 
 Outputs
 ~~~~~~~
