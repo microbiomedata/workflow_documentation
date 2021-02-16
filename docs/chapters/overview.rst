@@ -3,50 +3,28 @@ Overview
 
 NMDC
 ----
-The National Microbiome Data Collaborative (NMDC) is a new initiative, launched in July 2019 and funded by the Department of Energy’s (DOE) Office of Science, Biological and Environmental Research program, that aims to empower the research community to more effectively harness microbiome data. The NMDC is building an open-source, integrated data science ecosystem aimed at leveraging existing efforts in the microbiome research space, including data standards, quality, integration, and access, to create a linked data discovery portal. Read the Nature Reviews Microbiology Comment on the NMDC or visit microbiomedata.org.
+The National Microbiome Data Collaborative (NMDC) is a new initiative, launched in July 2019 and funded by the Department of Energy’s (DOE) Office of Science, Biological and Environmental Research program, that aims to empower the research community to more effectively harness microbiome data. The NMDC is building an open-source, integrated data science ecosystem aimed at leveraging existing efforts in the microbiome research space, including data standards, quality, integration, and access, to create a linked data discovery portal. Read the `Nature Reviews Microbiology Comment <https://www.nature.com/articles/s41579-020-0377-0>`_ on the NMDC or visit the `NMDC website <https://microbiomedata.org/>`_.
 
-Participants (4 NLs)
+Four national laboratories are working together to produce the NMDC:
+
+ - Lawrence Berkeley National Laboratory
+ - Los Alamos National Laboratory
+ - Oak Ridge National Laboratory
+ - Pacific Northwest National Laboratory
 
 
 NMDC Workflows
 --------------
-
+NMDC aims to integrate existing open-source bioinformatics tools into standardized workflows for processing raw multi-omics data to produce interoperable and reusable annotated data products. Any commercial software are optional alternatives and not required.
 
 Execution Evironment
 --------------------
+
 Two common ways to install and run the NMDC workflows:
 
-- Native installation
-- Containers
+ - Native installation
+ - Containers
+   
+The NMDC workflows have been written in WDL and require a WDL-capable Workflow Execution Tool (i.e., Cromwell). Docker images have been created for all of the workflows as well. Databases must be downloaded and installed for most of the workflows.
 
-  
-
-TODO: The following ways to run the workflows have to be separate out from public release of the documentation.
-
-- Cori/NERSC
-- LANL enviroment
-- KBase (TODO: ?)
-
-The NMDC workflows are also available as a web application. NMDC EDGE takes an updated EDGE Bioinformatics framework and has only the NMDC workflows integrated in order to make these workflows accessible in a user-friendly interface. (A brief introduction to EDGE Bioinformatics is found in the EDGE ABCs.) NMDC EDGE is provided as a webservice especially for users who are not comfortable with running command line tools or without the computational resources to run the command line versions.
- 
-
-The NMDC EDGE web application is available at: https://nmdc.edge-bioinformatics-test.org
-
-
-
-General Guidelines
-------------------
-TODO: Can be from Shane's "do's and dont's" document.
-
-Open source software, FAIR,
-
-TODO: shall we mentions the following line?
-all commercial software are optional alternatives and not required.
-
-
-
-Git Repo:
-https://github.com/microbiomedata/WorkflowPlanning/tree/master/AssemblyPipeline
-
-
-TODO: Git repo of this document:
+As a third option, the NMDC workflows are also available as a `web application <https://nmdc.edge-bioinformatics-test.org>`_. NMDC EDGE has only the NMDC workflows integrated into an updated framework for `EDGE Bioinformatics <https://edgebioinformatics.org/>`_ ; this provides the workflows and requisite databases within a platform with a user-friendly interface. (A brief introduction to EDGE Bioinformatics is found in the EDGE ABCs.) NMDC EDGE is provided as a web application especially for users who are not comfortable with running command line tools or without the computational resources to run the command line or Docker versions.
