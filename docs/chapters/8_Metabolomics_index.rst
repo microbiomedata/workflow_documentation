@@ -1,4 +1,4 @@
-Metabolomics Workflow
+Metabolomics Workflow (v2.1.0)
 ==============================
 
 Summary

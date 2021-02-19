@@ -1,4 +1,4 @@
-The Reads QC Workflow, v1.0.1
+The Reads QC Workflow (v1.0.1)
 =============================
 
 .. image:: ../_static/images/1_RQC_rqc_workflow.png

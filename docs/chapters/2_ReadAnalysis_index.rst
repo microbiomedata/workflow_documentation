@@ -1,4 +1,4 @@
-The Read-based Analysis Workflow
+The Read-based Analysis Workflow (v1.0.1)
 ================================
 
 .. image:: ../_static/images/2_ReadAnalysis_readbased_analysis_workflow.png
