@@ -9,3 +9,4 @@ workflows:
     '6_MetaT': 'https://github.com/microbiomedata/metaT.git'
     '7_Metaproteomics': 'https://github.com/microbiomedata/metaPro'
     '8_Metabolomics': 'https://github.com/microbiomedata/metaMS'
+    '9_NOM': 'https://github.com/microbiomedata/enviroMS'

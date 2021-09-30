@@ -15,3 +15,4 @@ Welcome to NMDC Workflows's documentation!
    chapters/6_MetaT_index.rst
    chapters/7_Metaproteomics_index.rst
    chapters/8_Metabolomics_index.rst
+   chapters/9_NOM_index.rst
