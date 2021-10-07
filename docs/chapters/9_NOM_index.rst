@@ -1,4 +1,4 @@
-Natural Organic Matter Workflow (v4.1.5)
+Natural Organic Matter Workflow
 ================================
 
 Summary
