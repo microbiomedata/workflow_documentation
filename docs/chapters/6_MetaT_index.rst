@@ -4,7 +4,7 @@ Metatranscriptome Workflow (v0.0.2)
 Summary
 -------
 
-This workflow is designed to analyze metatranscriptomes. It is dependent on outputs from other NMDC workflow for input. It runs in two parts: Part 1 (workflows/metaT_part1.wdl) takes in clean interleaved reads (from the NMDC Reads QC workflow) as input, filters out rRNA reads (and separates the interleaved file into separate files for the pairs) using bbduk (BBTools), and assembles filtered reads into transcripts using MEGAHIT; Part 2 (workflows/metaT_part2.wdl) requires input from Part 1 (filtered reads and assembled transcripts), and the GFF functional annotation files generated from the NMDC Metagenome Annotation Workflow, to generate RPKMs for each feature in the GFF file.
+MetaT is a workflow designed to analyze metatranscriptomes, building on top of already existing NMDC workflows for processing input. The metatranscriptoimics workflow takes in raw data and starts by quality filtering the reads using the `RQC worfklow <https://github.com/microbiomedata/ReadsQC>`__. With filtered reads, the workflow filters out rRNA reads (and separates the interleaved file into separate files for the pairs) using bbduk (BBTools). After the filtering steps, reads are assembled into transcripts and using MEGAHIT and annotated using the `Metagenome Anotation Workflow <https://github.com/microbiomedata/mg_annotation>`_; producing GFF funtional annotation files. Features are counted with `Subread's featureCounts <http://subread.sourceforge.net/>`_ which assigns mapped reads to genomic features and generating RPKMs for each feature in a GFF file for sense and antisense reads. 
 
 
 Workflow Diagram
@@ -30,10 +30,10 @@ Workflow Dependencies
 ---------------------
 Third-party software (These are included in the Docker images.)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1. `BBTools v38.44 <https://jgi.doe.gov/data-and-tools/bbtools/>`_. (License: `BSD-3-Clause-LBNL <https://bitbucket.org/berkeleylab/jgi-bbtools/src/master/license.txt>`_.)
-2. `hisat2 v2.1 <http://daehwankimlab.github.io/hisat2/>`_. (License: GPL-3.0)
+1. `BBTools v38.94 <https://jgi.doe.gov/data-and-tools/bbtools/>`_. (License: `BSD-3-Clause-LBNL <https://bitbucket.org/berkeleylab/jgi-bbtools/src/master/license.txt>`_.)
+2. `BBMap v38.94 <https://jgi.doe.gov/data-and-tools/bbtools/>`_. (License: `BSD-3-Clause-LBNL <https://bitbucket.org/berkeleylab/jgi-bbtools/src/master/license.txt>`_.)
 3. `Python v3.7.6 <https://www.python.org/>`_.  (License: Python Software Foundation License)
-4. `featureCounts v2.0.1<http://subread.sourceforge.net/>`_. (License: GNU-GPL)
+4. `featureCounts v2.0.2 <http://subread.sourceforge.net/>`_. (License: GNU-GPL)
 5. `R v3.6.0 <https://www.r-project.org/>`_. (License: GPL-2/GPL-3)
 6. `edgeR v3.28.1 <https://bioconductor.org/packages/release/bioc/html/edgeR.html>`_. (R package) (License: GPL (>=2))
 7. `pandas v1.0.5 <https://pandas.pydata.org/>`_. (python package) (License: BSD-3-Clause)
@@ -88,7 +88,7 @@ An example JSON file is shown below:
 
 Output
 ~~~~~~
-Part 1 output includes the rRNA-filtered reads and the assembled transcripts. Part 2 provides the main output: a JSON file that contain RPKMs, reads, and information from annotation for each feature. An example JSON record:
+Output is split up between steps of the workflow. The first half of the workflow will output rRNA-filtered reads and the assembled transcripts. After annotations and featureCount steps include a JSON file that contain RPKMs for both sense and antisense, reads, and information from annotation for each feature. An example of JSON outpus:
 
 .. code-block:: JSON
 
@@ -131,7 +131,7 @@ Below is an example of the output directory files with descriptions to the right
 Version History 
 ---------------
 - 0.0.2 (release date 01/14/2021; previous versions: 0.0.1)
-
+- 0.0.3 (release date 07/28/2021; previous versions: 0.0.2)
 Points of contact
 -----------------
 - Author: Migun Shakya <migun@lanl.gov>
