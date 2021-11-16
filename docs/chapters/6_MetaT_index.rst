@@ -10,7 +10,7 @@ MetaT is a workflow designed to analyze metatranscriptomes, building on top of a
 Workflow Diagram
 ------------------
 
-.. image:: ../_static/images/6_MetaT_workflow_metatranscriptomics.png
+.. image:: ../_static/images/9_MetaT_workflow_metatranscriptomics.png
    :scale: 25%
    :alt: Metatranscriptome workflow
 
