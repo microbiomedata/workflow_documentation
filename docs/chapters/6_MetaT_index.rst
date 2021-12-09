@@ -114,20 +114,51 @@ Below is an example of the output directory files with descriptions to the right
    :widths: 25 50
    :header-rows: 1
 
-   * - File Name
+   * - Directory/File Name
      - Description
-   * - out.json
-     - main output file
-   * - megahit_assem.contigs.fa
+   * - metat_output/sense_out.json
+     - RPKM for each feature on + strand
+   * - metat_output/antisense_out.json
+     - RPKM for each feature on - strand
+   * - assembly/megahit_assem.contigs.fa
      - assembled transcripts
-   * - Mapped_sorted.bam
+   * - mapback/mapped_sorted.bam
      - alignment of reads and transcripts
-   * - `feat_names`.count
-     - output of featureCounts
-   * - filered_R1.fastq;filtered_R2.fastq
+   * - qa/_interleaved.fastq
      - non-ribosomal reads 
-
-
+   * - qa/filterStats.txt
+     - summary statistics in JSON format
+   * - qa/filterStats2.txt
+     - more detailed summary statistics
+   * - annotation/annotations.json
+     -
+   * - annotation/features.json
+     -
+   * - annotation/_cath_funfam.gff
+     -
+   * - annotation/_cog.gff
+     -
+   * - annotation/_ko_ec.gff
+     -     
+   * - annotation/_pfam.gff
+     -     
+   * - annotation/_smart.gff
+     -     
+   * - annotation/_structural_annotation.gff
+     -     
+   * - annotation/_supfam.gff
+     -     
+   * - annotation/_tigrfam.gff
+     -
+   * - annotation/_functional_annotation.gff
+     -     
+   * - annotation/_ec.tsv
+     -     
+   * - annotation/_ko.tsv
+     -     
+   * - annotation/proteins.faa  
+     - fasta containing protiens 
+     
 Version History 
 ---------------
 - 0.0.2 (release date 01/14/2021; previous versions: 0.0.1)
