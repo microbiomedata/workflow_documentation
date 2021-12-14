@@ -7,10 +7,12 @@ Summary
 MetaT is a workflow designed to analyze metatranscriptomes, building on top of already existing NMDC workflows for processing input. The metatranscriptoimics workflow takes in raw data and starts by quality filtering the reads using the `RQC worfklow <https://github.com/microbiomedata/ReadsQC>`__. With filtered reads, the workflow filters out rRNA reads (and separates the interleaved file into separate files for the pairs) using bbduk (BBTools). After the filtering steps, reads are assembled into transcripts and using MEGAHIT and annotated using the `Metagenome Anotation Workflow <https://github.com/microbiomedata/mg_annotation>`_; producing GFF funtional annotation files. Features are counted with `Subread's featureCounts <http://subread.sourceforge.net/>`_ which assigns mapped reads to genomic features and generating RPKMs for each feature in a GFF file for sense and antisense reads. 
 
 
+
+
 Workflow Diagram
 ------------------
 
-.. image:: ../_static/images/9_MetaT_Workflow_metatranscriptomics.png
+.. image:: ../_static/images/6_MetaT_metaT_figure.png
    :scale: 25%
    :alt: Metatranscriptome workflow
 
@@ -114,6 +116,10 @@ Below is an example of the output directory files with descriptions to the right
    :widths: 25 50
    :header-rows: 1
 
+.. list-table:: Title
+   :widths: 25 50
+   :header-rows: 1
+
    * - Directory/File Name
      - Description
    * - metat_output/sense_out.json
@@ -131,34 +137,36 @@ Below is an example of the output directory files with descriptions to the right
    * - qa/filterStats2.txt
      - more detailed summary statistics
    * - annotation/annotations.json
-     -
+     - annotation information
    * - annotation/features.json
-     -
+     - feature information
    * - annotation/_cath_funfam.gff
-     -
+     - features from cath database
    * - annotation/_cog.gff
-     -
+     - features from cog databse
    * - annotation/_ko_ec.gff
-     -     
+     - features from ko database
    * - annotation/_pfam.gff
-     -     
+     - features from pfam database
    * - annotation/_smart.gff
-     -     
+     - features from smart database
    * - annotation/_structural_annotation.gff
-     -     
+     - structural features
    * - annotation/_supfam.gff
-     -     
+     - features from supfam databse
    * - annotation/_tigrfam.gff
-     -
+     - features from trigfam database
    * - annotation/_functional_annotation.gff
-     -     
+     - functional features
    * - annotation/_ec.tsv
-     -     
+     - ec terms tsv
    * - annotation/_ko.tsv
-     -     
+     - ko terms tsv
    * - annotation/proteins.faa  
      - fasta containing protiens 
-     
+
+
+
 Version History 
 ---------------
 - 0.0.2 (release date 01/14/2021; previous versions: 0.0.1)
