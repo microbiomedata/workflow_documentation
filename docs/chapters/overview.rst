@@ -1,20 +1,5 @@
-Overview
-==================
-
-NMDC
-----
-The National Microbiome Data Collaborative (NMDC) is a new initiative, launched in July 2019 and funded by the Department of Energy’s (DOE) Office of Science, Biological and Environmental Research program, that aims to empower the research community to more effectively harness microbiome data. The NMDC is building an open-source, integrated data science ecosystem aimed at leveraging existing efforts in the microbiome research space, including data standards, quality, integration, and access, to create a linked data discovery portal. Read the `Nature Reviews Microbiology Comment <https://www.nature.com/articles/s41579-020-0377-0>`_ on the NMDC or visit the `NMDC website <https://microbiomedata.org/>`_.
-
-Four national laboratories are working together to produce the NMDC:
-
- - Lawrence Berkeley National Laboratory
- - Los Alamos National Laboratory
- - Oak Ridge National Laboratory
- - Pacific Northwest National Laboratory
-
-
 NMDC Workflows
---------------
+==============
 
 General Guidelines
 --------------------
