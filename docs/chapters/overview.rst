@@ -1,5 +1,5 @@
 NMDC Workflows
-==================
+==============
 
 General Guidelines
 --------------------
