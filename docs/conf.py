@@ -204,3 +204,28 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
+
+# -- Redirects ---------------------------------------------------------------
+
+# Define the sources (by page path, without its suffix) and destinations
+# (by full URL, when the destination is not another local page) of the
+# redirects we want Sphinx to generate. In general, we want to redirect people
+# from pages on this local site, to corresponding pages on our centralized
+# documentation website hosted at https://docs.microbiomedata.org.
+#
+# Reference: https://pypi.org/project/sphinx-reredirects/
+#
+redirects = {
+    "index": "https://docs.microbiomedata.org/workflows/",
+    "chapters/overview": "https://docs.microbiomedata.org/workflows/chapters/overview",
+    "chapters/1_RQC_index": "https://docs.microbiomedata.org/workflows/chapters/3_Metagenome_Reads_QC/",
+    "chapters/2_ReadAnalysis_index": "https://docs.microbiomedata.org/workflows/chapters/2_Read_Based_Taxonomy/",
+    # Note: The original document's name contains a typo (i.e., "Assemly" instead of "Assembly").
+    "chapters/3_MetaGAssemly_index": "https://docs.microbiomedata.org/workflows/chapters/4_Metagenome_Assembly/",
+    "chapters/4_MetaGAnnotation_index": "https://docs.microbiomedata.org/workflows/chapters/5_Metagenome_and_Metatranscriptome_Annotation/",
+    "chapters/5_MAG_index": "https://docs.microbiomedata.org/workflows/chapters/6_Metagenome_Assembled_Genome/",
+    "chapters/6_MetaT_index": "https://docs.microbiomedata.org/workflows/chapters/7_Metatranscriptome_Workflow_Overview/",
+    "chapters/7_Metaproteomics_index": "https://docs.microbiomedata.org/workflows/chapters/11_Metaproteomics/",
+    "chapters/8_Metabolomics_index": "https://docs.microbiomedata.org/workflows/chapters/12_Metabolomics/",
+    "chapters/9_NOM_index": "https://docs.microbiomedata.org/workflows/chapters/13_Natural_Organic_Matter/",
+}
