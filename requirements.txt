@@ -1,1 +1,5 @@
 docutils==0.17.1
+
+# Sphinx plugin that handles redirects.
+# Reference: https://pypi.org/project/sphinx-reredirects/
+sphinx-reredirects
