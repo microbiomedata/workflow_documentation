@@ -8,11 +8,6 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.12"
-  # Override parts of the standard Read the Docs build process.
-  # Reference: https://docs.readthedocs.io/en/stable/build-customization.html
-  jobs:
-    pre_build:
-      - python compose.py && cd docs && make html
 
 # Tell Sphinx where our `conf.py` file resides.
 sphinx:
